@@ -1,0 +1,13 @@
+apiVersion: kube-green.com/v1alpha1
+kind: SleepInfo
+metadata:
+  name: sleep-info-mins
+  namespace: test-sleep
+spec:
+  weekdays: "*"
+  sleepAt:  "*:*/1"
+  wakeUpAt: "*:*/5"
+  excludeRef:
+    - apiVersion: "apps/v1"
+      kind:       Deployment
+      name:       do-not-sleep-nginx

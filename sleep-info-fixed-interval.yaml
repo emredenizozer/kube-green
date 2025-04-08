@@ -1,0 +1,14 @@
+apiVersion: kube-green.com/v1alpha1
+kind: SleepInfo
+metadata:
+  name: up-only-working-hours
+  namespace: test-sleep
+spec:
+  weekdays: "1-5"
+  sleepAt:  "18:00"
+  wakeUpAt: "08:00"
+  timeZone: "Europe/Berlin"
+  excludeRef:
+    - apiVersion: "apps/v1"
+      kind:       Deployment
+      name:       do-not-sleep-nginx
